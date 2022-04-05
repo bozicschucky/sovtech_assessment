@@ -16,10 +16,15 @@ export const typeDefs = gql`
     results: [personDetails]
   }
 
+  type SearchPerson {
+    count: Int
+    results: [personDetails]
+  }
+
   # The "Query" type is special: it lists all of the available queries that
   # clients can execute, along with the return type for each.
   type Query {
     people(page: Int): Page
-    #search(name: String!): SearchPerson
+    search(name: String!): SearchPerson
   }
 `;
