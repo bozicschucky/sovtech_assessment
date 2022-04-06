@@ -19,7 +19,6 @@ export class peopleAPi extends RESTDataSource {
     const response = await this.get(`people/?search=${personName}`);
     if (response) {
       const { results, count } = response;
-      console.log("results", response);
       return { results, count };
     }
   }

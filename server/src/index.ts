@@ -4,9 +4,9 @@ import { resolvers } from "./resolvers";
 import { typeDefs } from "./schema";
 import { peopleAPi } from "./swapi";
 
-const PORT = process.env.PORT || 3000;
+let PORT = process.env.PORT || 3000;
 
-const server = new ApolloServer({
+export const server = new ApolloServer({
   typeDefs,
   resolvers,
   dataSources: () => {
@@ -15,6 +15,10 @@ const server = new ApolloServer({
     };
   },
 });
+
+if (process.env.NODE_ENV === "test") {
+  PORT = 5050;
+}
 
 server.listen({ port: PORT }).then(({ url }) => {
   console.log(`the server is listening @ ${url}`);
