@@ -1,15 +1,21 @@
 import React from "react";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import "./App.css";
 import AllPeople from "./components/People";
+import PeopleDetails from "./components/PeopleDetails";
+import NavBar from "./components/nav";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <p>Welcome to the home page</p>
-        <AllPeople />
-      </header>
-    </div>
+    <BrowserRouter>
+      <NavBar />
+      <div className="App">
+        <Routes>
+          <Route path="person/:name" element={<PeopleDetails />} />
+          <Route path="/" element={<AllPeople page={2} />} />
+        </Routes>
+      </div>
+    </BrowserRouter>
   );
 }
 
