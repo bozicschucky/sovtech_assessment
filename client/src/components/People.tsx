@@ -2,6 +2,7 @@ import React, { useState, useRef } from "react";
 import ReactPaginate from "react-paginate";
 import { useQuery } from "@apollo/client";
 import { Link } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import { GET_ALL_PEOPLE_QUERY } from "../queries/people";
 import { ITEMS_PER_PAGE } from "../constants";
 
@@ -10,9 +11,10 @@ export default function GetPeople() {
   let { loading, error, data, refetch } = useQuery(GET_ALL_PEOPLE_QUERY, {
     variables: { page: pageState },
   });
+  const dispatch = useDispatch();
+  // @ts-ignore
+  const savedPage = useSelector((state) => state.app?.currentPage);
   const pageCountValue = useRef(0);
-  const currentPage = useRef(0);
-
   const dataset = data?.people;
 
   if (dataset) {
@@ -24,9 +26,8 @@ export default function GetPeople() {
     const { selected } = e;
     setPageState(selected + 1);
     refetch();
-    currentPage.current = selected;
+    dispatch({ type: "SET_CURRENT_PAGE", payload: selected + 1 });
   };
-
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
   return (
@@ -50,7 +51,7 @@ export default function GetPeople() {
           onPageChange={handlePageClick}
           pageRangeDisplayed={5}
           pageCount={pageCountValue.current}
-          forcePage={currentPage.current}
+          forcePage={savedPage - 1}
           previousLabel="<<"
           containerClassName="pagination "
           pageClassName="page-item"
