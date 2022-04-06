@@ -10,6 +10,7 @@ export const GET_PERSON_DETAILS_QUERY = gql`
         height
         mass
         gender
+        homeworld
       }
     }
   }

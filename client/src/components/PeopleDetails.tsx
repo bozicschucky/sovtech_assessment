@@ -18,7 +18,8 @@ export default function PeopleDetails() {
       <p>Name: {personDetails.name}</p>
       <p>Gender: {personDetails.gender}</p>
       <p>Height: {personDetails.height}</p>
-      <p>mass: {personDetails.mass}</p>
+      <p>Mass: {personDetails.mass}</p>
+      <p>HomeWorld : {personDetails.homeworld}</p>
     </div>
   );
 }
