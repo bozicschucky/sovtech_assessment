@@ -14,14 +14,10 @@
 }
 
 .App-header {
-  /* background-color: #282c34; */
-  /* min-height: 100vh; */
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /* font-size: calc(10px + 2vmin); */
-  /* color: white; */
 }
 
 .App-link {
@@ -35,4 +31,37 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+ul {
+  list-style-type: none;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  transition: 0.3s;
+  padding: 10px 12px;
+  background: rgb(254, 255, 243);
+  align-items: center;
+}
+
+.card:hover {
+  cursor: pointer;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+  background: rgb(247, 241, 191);
+}
+
+
+.nav-items {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 10px 20px;
+}
+
+html {
+    overflow-x: hidden;
 }
