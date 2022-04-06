@@ -1,21 +1,35 @@
 import React from "react";
 import { useQuery } from "@apollo/client";
+import { Link } from "react-router-dom";
 import { GET_ALL_PEOPLE_QUERY } from "../queries/people";
 
-export default function GetPeople() {
-  const { loading, error, data } = useQuery(GET_ALL_PEOPLE_QUERY);
-  console.log("🚀 ~ file: People.tsx ~ line 7 ~ GetPeople ~ data", data);
-
+type props = {
+  page: number;
+};
+export default function GetPeople(props: props) {
+  const page = props?.page || 1;
+  const { loading, error, data } = useQuery(GET_ALL_PEOPLE_QUERY, {
+    variables: { page },
+  });
   if (loading) return <p>Loading...</p>;
   if (error) return <p>Error :(</p>;
-  // @ts-ignore
-  return data?.people?.results?.map(({ name, gender, height }) => (
-    <div key={name}>
+  return (
+    <>
       <div>
-        <p>
-          {name}: {gender} :{height}
-        </p>
+        <h2>All the Star Wars People's details you've ever wanted</h2>
+        {
+          // @ts-ignore
+          data?.people?.results?.map(({ name }) => (
+            <div key={name} className="card">
+              <Link to={`person/${name}`}>
+                <div>
+                  <p>{name}</p>
+                </div>
+              </Link>
+            </div>
+          ))
+        }
       </div>
-    </div>
-  ));
+    </>
+  );
 }
