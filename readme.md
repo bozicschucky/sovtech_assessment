@@ -16,19 +16,35 @@ Welcome to the sovtech challenge that has  a backend and a frontend which intera
   API_URL="https://swapi.dev/api/"
   PORT=8080
   ```
-  - Install the project dependencies by running `npm or yarn install`
-  - Run the development server by running `npm or yarn run dev`
+  - Install the project dependencies by running `npm run install`
+  - Run the development server by running `npm run run dev`
   - Open the application in browser by visiting port `http://localhost:8080/` which will open the apollo graphql playground.
-  - Run the project tests by running `npm or yarn test`
+  - Run the project tests by running `npm run test`
   - **NB.** The API_URL is the url of the starwars API which is public but this endpoint wouldn't be added in the project readme file and the project use nodes v14.15.3 LTS.
 
 
-#### Dependencies
+  #### Dependencies
 
-- [typescript](https://typescript.org/)
-- [ts-node](https://www.npmjs.com/package/ts-node)
-- [ts-node-dev](https://www.npmjs.com/package/ts-node-dev)
-- node v14.15.3 LTS
-- apollo-datasource-rest
-- apollo-server-express
-- graphql
+  - [typescript](https://typescript.org/)
+  - [ts-node](https://www.npmjs.com/package/ts-node)
+  - [ts-node-dev](https://www.npmjs.com/package/ts-node-dev)
+  - node v14.15.3 LTS
+  - apollo-datasource-rest
+  - apollo-server-express
+  - graphql
+
+- ### Frontend
+  - After the repo has been cloned from github.
+  - cd into the client folder
+  - Install the project dependencies by running `npm or yarn install`
+  - Run the development server by running `npm run start or yarn  start`
+  - Open the application will open in the browser on port `http://localhost:3000/` which will open the home route.
+
+  #### Dependencies
+
+  - [typescript](https://typescript.org/)
+  - React v18.0.0
+  - React Router
+  - apollo-client
+  - graphql
+  - node v14.15.3 LTS
