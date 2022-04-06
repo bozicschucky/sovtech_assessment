@@ -12,7 +12,7 @@ function App() {
       <div className="App">
         <Routes>
           <Route path="person/:name" element={<PeopleDetails />} />
-          <Route path="/" element={<AllPeople page={2} />} />
+          <Route path="/" element={<AllPeople />} />
         </Routes>
       </div>
     </BrowserRouter>

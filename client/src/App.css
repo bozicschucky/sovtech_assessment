@@ -2,16 +2,7 @@
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
 
 .App-header {
   display: flex;
@@ -64,4 +55,26 @@ ul {
 
 html {
     overflow-x: hidden;
+}
+
+.pagination{
+  display: flex ;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  gap: 10px 20px;
+}
+
+.page-item:hover {
+cursor: pointer;
+background-color: yellow;
+}
+
+.active-item{
+  background-color: yellow;
+}
+
+.next-item:hover, .previous-item:hover{
+  cursor: pointer;
 }
