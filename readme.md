@@ -47,4 +47,5 @@ Welcome to the sovtech challenge that has  a backend and a frontend which intera
   - React Router
   - apollo-client
   - graphql
+  - Redux and ReduxToolKit
   - node v14.15.3 LTS
